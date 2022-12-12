@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import callToApi from '../services/api';
 // import ls from '../services/localStorage';
 
-import image from '../images/Rick_and_Morty_title.png';
+import image from '../images/Rick_and_Morty_title-transparent.png';
 import '../styles/App.scss';
 import CharacterList from './CharactersList';
 
@@ -24,7 +24,7 @@ function App() {
   // HTML EN EL RETURN
 
   return (
-    <div>
+    <div class="body">
       <header className="text-align-center">
         <img
           className="card__img"

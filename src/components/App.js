@@ -10,6 +10,7 @@ import CharacterList from './CharactersList';
 function App() {
   // VARIABLES ESTADO
   const [characters, setCharacters] = useState([]);
+  const [nameFilter, setNameFilter] = useState('');
 
   // USEEFFECT
   useEffect(() => {
@@ -17,14 +18,21 @@ function App() {
       setCharacters(cleanData);
     });
   }, []);
+
   // FUNCIONES HANDLER
+  const handleFilterName = (ev) => {
+    setNameFilter(ev.target.value);
+  };
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
 
   // FUNCIONES Y VARIABLES QUE AYUDEN A RENDERIZAR HTML
 
   // HTML EN EL RETURN
-
   return (
-    <div class="body">
+    <div className="body">
       <header className="text-align-center">
         <img
           className="card__img"
@@ -33,12 +41,16 @@ function App() {
           title="Rick and Morty"
         />
         <h1 className="title--big">Rick and Morty characters</h1>
-        <form action="" className="form__label">
-          <input type="text" className="form__input-text " />
+        <form action="" className="form__label" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className="form__input-text "
+            onChange={handleFilterName}
+          />
         </form>
       </header>
       <main>
-        <CharacterList characters={characters} />
+        <CharacterList characters={characters} nameFilter={nameFilter} />
       </main>
       <footer className="footer">
         <small>

@@ -11,7 +11,7 @@ const CharacterDetail = ({ findCharacter }) => {
         <div className="modal__header">
           <h2 className="title--big">{characterFound.name}</h2>
           <Link className="form__btn" to="/">
-            Volver
+            Return
           </Link>
         </div>
 

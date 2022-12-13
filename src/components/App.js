@@ -10,7 +10,7 @@ import CharacterList from './CharactersList';
 import Footer from './Footer';
 import CharacterDetail from './CharacterDetail';
 import Filters from './Filters';
-// import NoWorkingPage from './NoWorkinPage';
+// import PageNotFound from './PageNotFound';
 
 function App() {
   // VARIABLES ESTADO
@@ -87,7 +87,7 @@ function App() {
           path="/character/:id"
           element={<CharacterDetail findCharacter={findCharacter} />}
         />
-        {/* <Route path="*" element={<NoWorkingPage />} /> */}
+        {/* <Route path="*" element={<PageNotFound />} /> */}
       </Routes>
     </div>
   );

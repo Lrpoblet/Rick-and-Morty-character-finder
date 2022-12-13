@@ -8,7 +8,6 @@ function Footer(props) {
         </a>
       </small>
       <p>
-        Data:
         <a href="https://rickandmortyapi.com/" target="_blank" rel="noreferrer">
           https://rickandmortyapi.com/
         </a>

@@ -51,7 +51,7 @@ function App() {
 
   // HTML EN EL RETURN
   return (
-    <div className="body">
+    <div>
       <Header
         image={image}
         handleSubmit={handleSubmit}

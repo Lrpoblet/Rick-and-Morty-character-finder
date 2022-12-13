@@ -1,15 +1,19 @@
 import CharacterCard from './CharacterCard';
+// import notfound from '../images/not-found.jfif';
 
-const CharacterList = ({ filteredCharacters }) => {
+const CharacterList = ({ filteredCharacters, nameFilter }) => {
   const htmlCharacter = filteredCharacters.map((eachCharacter) => {
-    //console.log(filteredCharacters.length);
-    if (filteredCharacters.length !== 0) {
+    console.log(filteredCharacters);
+
+    if (filteredCharacters.length > 0) {
       return (
         <CharacterCard eachCharacter={eachCharacter} key={eachCharacter.id} />
       );
     } else {
       // NO FUNCIONA
-      return console.log('No hay coincidencias');
+      return (
+        <p>{`There is no character that matches the word ${nameFilter}.`}</p>
+      );
     }
   });
 

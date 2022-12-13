@@ -10,6 +10,7 @@ import CharacterList from './CharactersList';
 import Footer from './Footer';
 import CharacterDetail from './CharacterDetail';
 import Filters from './Filters';
+// import NoWorkingPage from './NoWorkinPage';
 
 function App() {
   // VARIABLES ESTADO
@@ -69,8 +70,12 @@ function App() {
                 <Filters
                   handleSubmit={handleSubmit}
                   setchangeNameFilter={setchangeNameFilter}
+                  nameFilter={nameFilter}
                 />
-                <CharacterList filteredCharacters={filteredCharacters()} />
+                <CharacterList
+                  filteredCharacters={filteredCharacters()}
+                  nameFilter={nameFilter}
+                />
                 <Footer />
               </main>
             </>
@@ -80,6 +85,7 @@ function App() {
           path="/character/:id"
           element={<CharacterDetail findCharacter={findCharacter} />}
         />
+        {/* <Route path="*" element={<NoWorkingPage />} /> */}
       </Routes>
     </div>
   );

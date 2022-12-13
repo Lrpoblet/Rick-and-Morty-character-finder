@@ -1,4 +1,4 @@
-function Filters({ handleSubmit, setchangeNameFilter }) {
+function Filters({ handleSubmit, setchangeNameFilter, nameFilter }) {
   function handleChangeFilterName(event) {
     setchangeNameFilter(event.target.value);
   }
@@ -12,6 +12,7 @@ function Filters({ handleSubmit, setchangeNameFilter }) {
         type="text"
         className="form__input-text "
         onChange={handleChangeFilterName}
+        value={nameFilter}
       />
       <input
         type="reset"

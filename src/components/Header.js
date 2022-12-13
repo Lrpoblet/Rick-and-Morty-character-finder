@@ -1,6 +1,4 @@
-import Filters from './Filters';
-
-function Header({ image, handleSubmit, setchangeNameFilter }) {
+function Header({ image }) {
   return (
     <header className="text-align-center">
       <img
@@ -8,11 +6,6 @@ function Header({ image, handleSubmit, setchangeNameFilter }) {
         src={image}
         alt="Rick and Morty"
         title="Rick and Morty"
-      />
-      <h1 className="title--big">Characters</h1>
-      <Filters
-        handleSubmit={handleSubmit}
-        setchangeNameFilter={setchangeNameFilter}
       />
     </header>
   );

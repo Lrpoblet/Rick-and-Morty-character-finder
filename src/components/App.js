@@ -9,6 +9,7 @@ import Header from './Header';
 import CharacterList from './CharactersList';
 import Footer from './Footer';
 import CharacterDetail from './CharacterDetail';
+import Filters from './Filters';
 
 function App() {
   // VARIABLES ESTADO
@@ -57,20 +58,20 @@ function App() {
   // HTML EN EL RETURN
   return (
     <div>
+      <Header image={image} />
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Header
-                image={image}
-                handleSubmit={handleSubmit}
-                setchangeNameFilter={setchangeNameFilter}
-              />
-              <main>
+              <main className="text-align-center">
+                <h1 className="title--big">Characters</h1>
+                <Filters
+                  handleSubmit={handleSubmit}
+                  setchangeNameFilter={setchangeNameFilter}
+                />
                 <CharacterList filteredCharacters={filteredCharacters()} />
               </main>
-              <Footer />
             </>
           }
         />
@@ -79,6 +80,7 @@ function App() {
           element={<CharacterDetail findCharacter={findCharacter} />}
         />
       </Routes>
+      <Footer />
     </div>
   );
 }

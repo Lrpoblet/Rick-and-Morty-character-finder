@@ -5,7 +5,9 @@ import callToApi from '../services/api';
 
 import image from '../images/Rick_and_Morty_title-transparent.png';
 import '../styles/App.scss';
+import Header from './Header';
 import CharacterList from './CharactersList';
+import Footer from './Footer';
 
 function App() {
   // VARIABLES ESTADO
@@ -20,60 +22,45 @@ function App() {
   }, []);
 
   // FUNCIONES HANDLER
-  const handleFilterName = (ev) => {
-    setNameFilter(ev.target.value);
-  };
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
 
   // FUNCIONES Y VARIABLES QUE AYUDEN A RENDERIZAR HTML
+  const setchangeNameFilter = (value) => {
+    setNameFilter(value);
+  };
+
+  const filteredCharacters = () => {
+    return characters
+      .sort((a, b) => {
+        if (a.name.toLowerCase() < b.name.toLowerCase()) {
+          return -1;
+        }
+        if (a.name.toLowerCase() > b.name.toLowerCase()) {
+          return 1;
+        }
+        return 0;
+      })
+
+      .filter((character) => {
+        return character.name.toLowerCase().includes(nameFilter.toLowerCase());
+      });
+  };
 
   // HTML EN EL RETURN
   return (
     <div className="body">
-      <header className="text-align-center">
-        <img
-          className="card__img"
-          src={image}
-          alt="Rick and Morty"
-          title="Rick and Morty"
-        />
-        <h1 className="title--big">Rick and Morty characters</h1>
-        <form action="" className="form__label" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            className="form__input-text "
-            onChange={handleFilterName}
-          />
-        </form>
-      </header>
+      <Header
+        image={image}
+        handleSubmit={handleSubmit}
+        setchangeNameFilter={setchangeNameFilter}
+      />
       <main>
-        <CharacterList characters={characters} nameFilter={nameFilter} />
+        <CharacterList filteredCharacters={filteredCharacters()} />
       </main>
-      <footer className="footer">
-        <small>
-          &copy;2022
-          <a
-            href="https://github.com/Lrpoblet"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Lara R. Poblet
-          </a>
-        </small>
-        <p>
-          Data:
-          <a
-            href="https://rickandmortyapi.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            https://rickandmortyapi.com/
-          </a>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -9,7 +9,7 @@ const CharacterDetail = ({ findCharacter }) => {
     <div className="modal">
       <section className="modal__content">
         <div className="modal__header">
-          <h2 className="title--big">{characterFound.name}</h2>
+          <h2 className="title--big title--superbig">{characterFound.name}</h2>
           <Link className="form__btn" to="/">
             Return
           </Link>

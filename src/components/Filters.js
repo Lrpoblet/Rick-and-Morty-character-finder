@@ -11,6 +11,7 @@ function Filters({ handleSubmit, setchangeNameFilter, nameFilter }) {
       <input
         type="text"
         className="form__input-text "
+        placeholder="E.g. Rick"
         onChange={handleChangeFilterName}
         value={nameFilter}
       />

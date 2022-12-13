@@ -66,7 +66,9 @@ function App() {
           element={
             <>
               <main className="text-align-center">
-                <h1 className="title--big">Characters</h1>
+                <h1 className="title--superbig title--big">
+                  Search character:
+                </h1>
                 <Filters
                   handleSubmit={handleSubmit}
                   setchangeNameFilter={setchangeNameFilter}
@@ -76,8 +78,8 @@ function App() {
                   filteredCharacters={filteredCharacters()}
                   nameFilter={nameFilter}
                 />
-                <Footer />
               </main>
+              <Footer />
             </>
           }
         />

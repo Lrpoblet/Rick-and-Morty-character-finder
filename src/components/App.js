@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import {Route} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import callToApi from '../services/api';
 // import ls from '../services/localStorage';
 
@@ -8,6 +8,7 @@ import '../styles/App.scss';
 import Header from './Header';
 import CharacterList from './CharactersList';
 import Footer from './Footer';
+import CharacterDetail from './CharacterDetail';
 
 function App() {
   // VARIABLES ESTADO
@@ -49,18 +50,35 @@ function App() {
       });
   };
 
+  const findCharacter = (id) => {
+    return characters.find((character) => character.id === parseInt(id));
+  };
+
   // HTML EN EL RETURN
   return (
     <div>
-      <Header
-        image={image}
-        handleSubmit={handleSubmit}
-        setchangeNameFilter={setchangeNameFilter}
-      />
-      <main>
-        <CharacterList filteredCharacters={filteredCharacters()} />
-      </main>
-      <Footer />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header
+                image={image}
+                handleSubmit={handleSubmit}
+                setchangeNameFilter={setchangeNameFilter}
+              />
+              <main>
+                <CharacterList filteredCharacters={filteredCharacters()} />
+              </main>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/character/:id"
+          element={<CharacterDetail findCharacter={findCharacter} />}
+        />
+      </Routes>
     </div>
   );
 }

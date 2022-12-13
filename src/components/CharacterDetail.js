@@ -24,20 +24,29 @@ const CharacterDetail = ({ findCharacter }) => {
           />
           <ul className="card__description">
             <li>
-              <span className="bold-text">Status: </span>{' '}
-              {characterFound.status}
-            </li>
-            <li>
               <span className="bold-text">Species: </span>{' '}
               {characterFound.species}
             </li>
             <li>
-              <span className="bold-text">Origin: </span>
+              <span className="bold-text">Origin: </span>{' '}
               {characterFound.origin}
             </li>
             <li>
               <span className="bold-text">Episodes: </span>{' '}
               {characterFound.episodes}
+            </li>
+            <li>
+              <span className="bold-text">Status: </span>{' '}
+              {characterFound.status}
+            </li>
+            <li>
+              <img
+                src={
+                  characterFound.status === 'Dead'
+                    ? 'https://img.icons8.com/ios/50/null/killed-fish.png'
+                    : null
+                }
+              />
             </li>
           </ul>
         </section>

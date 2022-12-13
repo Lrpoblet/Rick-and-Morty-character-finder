@@ -71,6 +71,7 @@ function App() {
                   setchangeNameFilter={setchangeNameFilter}
                 />
                 <CharacterList filteredCharacters={filteredCharacters()} />
+                <Footer />
               </main>
             </>
           }
@@ -80,7 +81,6 @@ function App() {
           element={<CharacterDetail findCharacter={findCharacter} />}
         />
       </Routes>
-      <Footer />
     </div>
   );
 }

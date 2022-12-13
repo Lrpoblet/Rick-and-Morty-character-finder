@@ -13,6 +13,7 @@ const callToApi = () => {
           location: character.location,
           image: character.image,
           url: character.url,
+          episodes: character.episode.length,
         };
       });
       return cleanData;

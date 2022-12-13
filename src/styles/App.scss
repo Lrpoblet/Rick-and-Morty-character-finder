@@ -1,7 +1,16 @@
 @import 'core/reset';
 
+//colors
+$blue: #07b0c7;
+$blue-2: #0a91a6;
+$lightgreen: #8ed983;
+
 html {
   background-color: black;
+}
+
+.bold-text {
+  font-weight: bold;
 }
 
 .text-align-center {
@@ -13,7 +22,34 @@ html {
 }
 
 .card {
-  box-shadow: 0 0 50px #4f9;
+  box-shadow: 0 0 50px $lightgreen;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .form__btn {
+    height: fit-content;
+  }
+
+  &__content {
+    width: 50%;
+    box-shadow: 0 0 100px #93cf8b;
+    background-color: $blue;
+    border-color: black;
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    width: 50%;
+  }
 }
 
 .footer {

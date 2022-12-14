@@ -35,4 +35,7 @@ https://rickandmortyapi.com/
 
 ## Otros enlaces de interés
 
-- Favicon: https://icons8.com/
+- Icons: https://icons8.com/
+- Logo: https://es.wikipedia.org/
+- Page Not Found: https://codepen.io/hkmtqffr/pen/dVPewm
+- Box shadow codes: https://getcssscan.com/css-box-shadow-examples

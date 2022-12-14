@@ -1,3 +1,5 @@
+import ls from './localStorage';
+
 const callToApi = () => {
   return fetch('https://rickandmortyapi.com/api/character')
     .then((response) => response.json())
@@ -16,6 +18,7 @@ const callToApi = () => {
           episodes: character.episode.length,
         };
       });
+      ls.set('characterList', cleanData);
       return cleanData;
     })
     .catch((error) => {

@@ -1,6 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
+import ls from '../services/localStorage';
 
 const CharacterDetail = ({ findCharacter }) => {
+  ls.get('characterList');
   const params = useParams();
 
   const characterFound = findCharacter(params.id);

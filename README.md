@@ -1,41 +1,41 @@
-# Evaluación final del Módulo 3: React
+# React module final evaluation
 
 ![Rick and Morty](./src/images/Rick_and_Morty_title-transparent.png)
 
-## Autora
+## Author
 
 Lara R. Poblet - [@lrpoblet](https://github.com/lrpoblet)
 
-## Resumen
+## Abstract
 
-Se trata de una página web con un listado de personajes de Rick and Morty, que se puede podemos filtrar por el nombre del personaje utilizando React para ello.
+It is a web page with a list of Rick and Morty characters, which can be filtered by the name of the character and more details information using React for it.
 
-## Especificaciones
+## Specifications
 
-El proyecto consta de rutas navegables dentro de la aplicación.
+The project have navigable routes within the application.
 
-- Una página landing en la que se muestran todos los personajes y una barra de búsqueda.
-- Una página con la información detalla del personaje seleccionado.
+- A landing page showing all the characters and a search bar.
+- A page with the detailed information of the selected character.
+- A page that appears in case there is no existing route.
 
-En el desarrollo de esta aplicación web se han usado las siguientes tecnologías:
+The following technologies have been used in the development of this web application:
 
 - HTML
 - CSS
 - React
-- Gestión de eventos en el navegador
-- Acceso y envío de datos a un servidor
-- Almacenamiento en local usando LocalStorage
-- Uso de git para el control de versiones del proyecto
-- Publicación del resultado en Internet usando GitHub Pages
+- Event management in the browser
+- Access data to a server
+- Using git for project version control
+- Publishing the result on the Internet using GitHub Pages
 
 ## API
 
-La API de la que se han obtenido los datos es:
+The API from which the data has been obtained is:
 https://rickandmortyapi.com/
 
-## Otros enlaces de interés
+## Other links of interest
 
 - Icons: https://icons8.com/
 - Logo: https://es.wikipedia.org/
 - Page Not Found: https://codepen.io/hkmtqffr/pen/dVPewm
-- Box shadow codes: https://getcssscan.com/css-box-shadow-examples
+- Box shadow codes: https://getcssscan.com/

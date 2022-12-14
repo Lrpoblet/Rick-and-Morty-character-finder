@@ -84,7 +84,12 @@ function App() {
         />
         <Route
           path="/character/:id"
-          element={<CharacterDetail findCharacter={findCharacter} />}
+          element={
+            <CharacterDetail
+              findCharacter={findCharacter}
+              characters={characters}
+            />
+          }
         />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

@@ -14,7 +14,7 @@ const CharacterDetail = ({ findCharacter, characters }) => {
         <PageNotFound />
       ) : (
         <div className="modal">
-          <section className="modal__content">
+          <section className="modal__content ">
             <div className="modal__header">
               <h2 className="title--big title--superbig">
                 {characterFound.name}
@@ -60,7 +60,7 @@ const CharacterDetail = ({ findCharacter, characters }) => {
               </ul>
             </section>
           </section>
-          <p>
+          <p className="text-align-center">
             <span className="bold-text">Shareable link: </span>
             {`https://beta.adalab.es/modulo-3-evaluacion-final-Lrpoblet/#/character/${characterFound.id}`}
           </p>

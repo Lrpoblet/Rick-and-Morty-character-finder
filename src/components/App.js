@@ -12,25 +12,20 @@ import Filters from './Filters/Filters';
 import PageNotFound from './PageNotFound';
 
 function App() {
-  // VARIABLES ESTADO
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
   const [speciesFilter, setSpeciesFilter] = useState('all');
 
-  // USEEFFECT
   useEffect(() => {
     callToApi().then((cleanData) => {
       setCharacters(cleanData);
     });
   }, []);
 
-  // FUNCIONES HANDLER
-
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
 
-  // FUNCIONES Y VARIABLES QUE AYUDEN A RENDERIZAR HTML
   const setchangeNameFilter = (value) => {
     setNameFilter(value);
   };
@@ -65,7 +60,6 @@ function App() {
     return characters.find((character) => character.id === parseInt(id));
   };
 
-  // HTML EN EL RETURN
   return (
     <div>
       <Header image={image} />
@@ -75,9 +69,6 @@ function App() {
           element={
             <>
               <main className="text-align-center">
-                <h1 className="title--superbig title--big">
-                  Search character:
-                </h1>
                 <Filters
                   handleSubmit={handleSubmit}
                   setchangeNameFilter={setchangeNameFilter}

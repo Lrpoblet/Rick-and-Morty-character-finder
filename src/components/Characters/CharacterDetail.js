@@ -60,6 +60,10 @@ const CharacterDetail = ({ findCharacter, characters }) => {
               </ul>
             </section>
           </section>
+          <p>
+            <span className="bold-text">Shareable link: </span>
+            {`https://beta.adalab.es/modulo-3-evaluacion-final-Lrpoblet/#/character/${characterFound.id}`}
+          </p>
         </div>
       )}
     </div>

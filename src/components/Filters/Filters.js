@@ -10,20 +10,23 @@ function Filters({
   speciesFilter,
 }) {
   return (
-    <form className="form__label" onSubmit={handleSubmit}>
-      <FilterByName
-        nameFilter={nameFilter}
-        setchangeNameFilter={setchangeNameFilter}
-      />
-      <FilterBySpecies
-        speciesFilter={speciesFilter}
-        setchangeSpeciesFilter={setchangeSpeciesFilter}
-      />
-      <ResetFilters
-        setchangeNameFilter={setchangeNameFilter}
-        setchangeSpeciesFilter={setchangeSpeciesFilter}
-      />
-    </form>
+    <>
+      <h1 className="title--superbig title--big">Search character:</h1>
+      <form className="form__label" onSubmit={handleSubmit}>
+        <FilterByName
+          nameFilter={nameFilter}
+          setchangeNameFilter={setchangeNameFilter}
+        />
+        <FilterBySpecies
+          speciesFilter={speciesFilter}
+          setchangeSpeciesFilter={setchangeSpeciesFilter}
+        />
+        <ResetFilters
+          setchangeNameFilter={setchangeNameFilter}
+          setchangeSpeciesFilter={setchangeSpeciesFilter}
+        />
+      </form>
+    </>
   );
 }
 

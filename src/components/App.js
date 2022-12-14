@@ -5,6 +5,7 @@ import callToApi from '../services/api';
 import image from '../images/Rick_and_Morty_title-transparent.png';
 import '../styles/App.scss';
 import Header from './Header';
+import Loading from './Loading';
 import CharacterList from './Characters/CharactersList';
 import Footer from './Footer';
 import CharacterDetail from './Characters/CharacterDetail';
@@ -15,11 +16,14 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
   const [speciesFilter, setSpeciesFilter] = useState('all');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     callToApi().then((cleanData) => {
       setCharacters(cleanData);
     });
+    setIsLoading(false);
   }, []);
 
   const handleSubmit = (ev) => {
@@ -63,6 +67,7 @@ function App() {
   return (
     <div>
       <Header image={image} />
+      <Loading isLoading={isLoading} />
       <Routes>
         <Route
           path="/"

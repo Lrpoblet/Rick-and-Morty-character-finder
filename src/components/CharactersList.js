@@ -1,25 +1,27 @@
 import CharacterCard from './CharacterCard';
-// import notfound from '../images/not-found.jfif';
+import notfound from '../images/not-found.jfif';
 
 const CharacterList = ({ filteredCharacters, nameFilter }) => {
   const htmlCharacter = filteredCharacters.map((eachCharacter) => {
-    console.log(filteredCharacters);
-
-    if (filteredCharacters.length > 0) {
-      return (
-        <CharacterCard eachCharacter={eachCharacter} key={eachCharacter.id} />
-      );
-    } else {
-      // NO FUNCIONA
-      return (
-        <p>{`There is no character that matches the word ${nameFilter}.`}</p>
-      );
-    }
+    return (
+      <CharacterCard eachCharacter={eachCharacter} key={eachCharacter.id} />
+    );
   });
+
+  const notFound = (
+    <div>
+      <p className="not-found__text">
+        There is no character that matches the word {nameFilter}.
+      </p>
+      <img className="not-found__img" src={notfound} alt="not found" />
+    </div>
+  );
 
   return (
     <section>
-      <ul className="cards">{htmlCharacter}</ul>
+      <ul className="cards">
+        {htmlCharacter.length === 0 ? notFound : htmlCharacter}
+      </ul>
     </section>
   );
 };

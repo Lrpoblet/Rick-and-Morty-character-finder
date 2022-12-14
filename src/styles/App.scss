@@ -69,6 +69,16 @@ html {
   }
 }
 
+.not-found__img {
+  width: 50%;
+  box-shadow: 0 0 50px $lightgreen;
+}
+
+.not-found__text {
+  color: white;
+  margin: 1em;
+}
+
 .footer {
   position: sticky;
   bottom: 0;

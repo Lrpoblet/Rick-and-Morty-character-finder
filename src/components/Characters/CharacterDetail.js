@@ -50,6 +50,7 @@ const CharacterDetail = ({ findCharacter, characters }) => {
                 </li>
                 <li>
                   <img
+                    className="dead"
                     src={
                       characterFound.status === 'Dead'
                         ? 'https://img.icons8.com/ios/50/null/killed-fish.png'

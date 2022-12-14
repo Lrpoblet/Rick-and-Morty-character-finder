@@ -1,5 +1,5 @@
 import CharacterCard from './CharacterCard';
-import notfound from '../images/not-found.jfif';
+import notfound from '../../images/not-found.jfif';
 
 const CharacterList = ({ filteredCharacters, nameFilter }) => {
   const htmlCharacter = filteredCharacters.map((eachCharacter) => {

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 // import ls from '../services/localStorage';
-import PageNotFound from './PageNotFound';
+import PageNotFound from '../PageNotFound';
 
 const CharacterDetail = ({ findCharacter, characters }) => {
   // ls.get('characterList');

@@ -5,9 +5,9 @@ import callToApi from '../services/api';
 import image from '../images/Rick_and_Morty_title-transparent.png';
 import '../styles/App.scss';
 import Header from './Header';
-import CharacterList from './CharactersList';
+import CharacterList from './Characters/CharactersList';
 import Footer from './Footer';
-import CharacterDetail from './CharacterDetail';
+import CharacterDetail from './Characters/CharacterDetail';
 import Filters from './Filters';
 import PageNotFound from './PageNotFound';
 

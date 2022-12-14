@@ -8,13 +8,14 @@ import Header from './Header';
 import CharacterList from './Characters/CharactersList';
 import Footer from './Footer';
 import CharacterDetail from './Characters/CharacterDetail';
-import Filters from './Filters';
+import Filters from './Filters/Filters';
 import PageNotFound from './PageNotFound';
 
 function App() {
   // VARIABLES ESTADO
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
+  const [speciesFilter, setSpeciesFilter] = useState('all');
 
   // USEEFFECT
   useEffect(() => {
@@ -34,20 +35,29 @@ function App() {
     setNameFilter(value);
   };
 
-  const filteredCharacters = () => {
-    return characters
-      .sort((a, b) => {
-        if (a.name.toLowerCase() < b.name.toLowerCase()) {
-          return -1;
-        }
-        if (a.name.toLowerCase() > b.name.toLowerCase()) {
-          return 1;
-        }
-        return 0;
-      })
+  const setchangeSpeciesFilter = (value) => {
+    setSpeciesFilter(value);
+  };
 
+  const sortCharacters = characters.sort((a, b) => {
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
+      return -1;
+    }
+    if (a.name.toLowerCase() > b.name.toLowerCase()) {
+      return 1;
+    }
+    return 0;
+  });
+
+  const filteredCharacters = () => {
+    return sortCharacters
       .filter((character) => {
         return character.name.toLowerCase().includes(nameFilter.toLowerCase());
+      })
+      .filter((character) => {
+        return speciesFilter === 'all'
+          ? true
+          : character.species === speciesFilter;
       });
   };
 
@@ -71,7 +81,9 @@ function App() {
                 <Filters
                   handleSubmit={handleSubmit}
                   setchangeNameFilter={setchangeNameFilter}
+                  setchangeSpeciesFilter={setchangeSpeciesFilter}
                   nameFilter={nameFilter}
+                  speciesFilter={speciesFilter}
                 />
                 <CharacterList
                   filteredCharacters={filteredCharacters()}

@@ -1,6 +1,6 @@
 # React module final evaluation
 
-![Rick and Morty](./src/images/Rick_and_Morty_title-transparent.png)
+![Rick and Morty](./src/images/rick-and-morty-aesthetic.gif)
 
 ## Author
 

@@ -1,7 +1,12 @@
-function ResetFilters({ setchangeNameFilter, setchangeSpeciesFilter }) {
+function ResetFilters({
+  setchangeNameFilter,
+  setchangeSpeciesFilter,
+  setchangeGenderFilter,
+}) {
   function deleteFilterName() {
     setchangeNameFilter('');
     setchangeSpeciesFilter('all');
+    setchangeGenderFilter('all');
   }
   return (
     <input

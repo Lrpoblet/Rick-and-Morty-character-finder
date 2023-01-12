@@ -1,6 +1,7 @@
 import FilterByName from './FilterByName';
 import FilterBySpecies from './FilterBySpecies';
 import ResetFilters from './ResetFilters';
+import FilterByGender from './FilterByGender';
 
 function Filters({
   handleSubmit,
@@ -8,6 +9,8 @@ function Filters({
   setchangeSpeciesFilter,
   nameFilter,
   speciesFilter,
+  genderFilter,
+  setchangeGenderFilter,
 }) {
   return (
     <>
@@ -21,9 +24,14 @@ function Filters({
           speciesFilter={speciesFilter}
           setchangeSpeciesFilter={setchangeSpeciesFilter}
         />
+        <FilterByGender
+          setchangeGenderFilter={setchangeGenderFilter}
+          genderFilter={genderFilter}
+        />
         <ResetFilters
           setchangeNameFilter={setchangeNameFilter}
           setchangeSpeciesFilter={setchangeSpeciesFilter}
+          setchangeGenderFilter={setchangeGenderFilter}
         />
       </form>
     </>

@@ -10,7 +10,7 @@ const CharacterDetail = ({ findCharacter, characters }) => {
 
   return (
     <div>
-      {characters.length === 0 ? (
+      {characterFound === undefined || characters.length === 0 ? (
         <PageNotFound />
       ) : (
         <div className="modal">
@@ -61,10 +61,6 @@ const CharacterDetail = ({ findCharacter, characters }) => {
               </ul>
             </section>
           </section>
-          <p className="text-align-center">
-            <span className="bold-text">Shareable link: </span>
-            {`https://beta.adalab.es/modulo-3-evaluacion-final-Lrpoblet/#/character/${characterFound.id}`}
-          </p>
         </div>
       )}
     </div>

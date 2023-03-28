@@ -55,6 +55,7 @@ body {
   &__section {
     display: flex;
     align-items: center;
+    flex-direction: row;
   }
 
   .card__description {

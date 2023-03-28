@@ -17,6 +17,7 @@ function App() {
   const [nameFilter, setNameFilter] = useState('');
   const [speciesFilter, setSpeciesFilter] = useState('all');
   const [isLoading, setIsLoading] = useState(false);
+  const [genderFilter, setGenderFilter] = useState('all');
 
   useEffect(() => {
     setIsLoading(true);
@@ -38,6 +39,10 @@ function App() {
     setSpeciesFilter(value);
   };
 
+  const setchangeGenderFilter = (value) => {
+    setGenderFilter(value);
+  };
+
   const sortCharacters = characters.sort((a, b) => {
     if (a.name.toLowerCase() < b.name.toLowerCase()) {
       return -1;
@@ -57,6 +62,11 @@ function App() {
         return speciesFilter === 'all'
           ? true
           : character.species === speciesFilter;
+      })
+      .filter((character) => {
+        return genderFilter === 'all'
+          ? true
+          : character.gender === genderFilter;
       });
   };
 
@@ -80,6 +90,8 @@ function App() {
                   setchangeSpeciesFilter={setchangeSpeciesFilter}
                   nameFilter={nameFilter}
                   speciesFilter={speciesFilter}
+                  setchangeGenderFilter={setchangeGenderFilter}
+                  genderFilter={genderFilter}
                 />
                 <CharacterList
                   filteredCharacters={filteredCharacters()}

@@ -1,4 +1,4 @@
-# React module final evaluation
+# Rick and Morty character finder
 
 ![Rick and Morty](./src/images/rick-and-morty-aesthetic.gif)
 

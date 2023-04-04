@@ -1,9 +1,14 @@
-function Footer(props) {
+function Footer() {
   return (
     <footer className="footer">
       <small>
-        &copy; 2023
-        <a href="https://github.com/Lrpoblet" target="_blank" rel="noreferrer">
+        &copy; 2023&#128030;
+        <a
+          href="https://lrpoblet.github.io/lara-ramos-poblet"
+          target="_blank"
+          rel="noreferrer"
+          title="Web personal"
+        >
           Lara R. Poblet
         </a>
       </small>
